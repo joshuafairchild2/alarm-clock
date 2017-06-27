@@ -4,10 +4,10 @@ let Clock = require('./../js/clock.js').clockModule;
 $(() => {
 
   let currentClock = new Clock();
+  let iframe;
+  let alarm = null;
   setInterval(() => $('#time').text(currentClock.getTime()), 1000);
 
-  let alarm = null;
-  let iframe;
   $(".alarm-form").submit((e) => {
     e.preventDefault();
     alarm = $("#alarm-input").val();
@@ -27,15 +27,15 @@ $(() => {
 
     alarm = `${hours}:${minutes}`;
     currentClock.setAlarm(alarm);
-    console.log(currentClock.alarm);
   });
 
   setInterval(() => {
-    if (currentClock.alarmSounding(moment().format('h:mm'))) {
+    if (currentClock.alarmSounding(moment().format('hh:mm'))) {
       $("body").addClass('active-alarm');
+      $("#time").addClass('drop');
       $(".time").append(iframe.splice(0, 1));
-      setTimeout(() => $("body").removeClass('active-alarm'), 200);
+      setTimeout(() => $("body").removeClass('active-alarm'), 150);
     }
-  }, 400);
+  }, 300);
 
 });

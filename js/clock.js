@@ -1,6 +1,6 @@
 function Clock() {
   this.alarm = null;
-  this.soundArray = ['<iframe width="0" height="0" src="https://www.youtube.com/embed/LQjoEvSd0Z0?autoplay=1" frameborder="0" allowfullscreen></iframe>'];
+  this.soundArray = ['<iframe width="0" height="0" src="https://www.youtube.com/embed/LQjoEvSd0Z0?autoplay=1&loop=0" frameborder="0" allowfullscreen></iframe>'];
 }
 
 Clock.prototype.getTime = function() {
