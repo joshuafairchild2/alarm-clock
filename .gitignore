@@ -5,3 +5,4 @@ build/
 tmp/
 post-babel/app.js
 .env
+.sass-cache/
